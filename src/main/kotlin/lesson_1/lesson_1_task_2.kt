@@ -12,7 +12,7 @@ fun main(){
 
     println(numberOfWorkers) // Количество работников
 
-    numberOfWorkers = 2000-1
+    numberOfWorkers--
 
     println(numberOfWorkers)
 
