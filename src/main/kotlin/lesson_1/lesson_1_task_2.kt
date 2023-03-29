@@ -4,7 +4,6 @@ fun main(){
 
     val numberOfOrders: Int = 75
     val notificationText: String = "Благодорим за покупку!"
-
     println(numberOfOrders)
     println(notificationText)
 
