@@ -4,7 +4,6 @@ fun main(){
 
     val numberOfOrders: Int = 75
     val notificationText: String = "Благодорим за покупку!"
-
     println(numberOfOrders)
     println(notificationText)
 
@@ -12,7 +11,7 @@ fun main(){
 
     println(numberOfWorkers) // Количество работников
 
-    numberOfWorkers = 2000-1
+    numberOfWorkers--
 
     println(numberOfWorkers)
 
