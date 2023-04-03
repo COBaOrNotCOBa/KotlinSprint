@@ -6,4 +6,5 @@ fun main() {
     val parts = turn.split("-",";")
     for(part in parts) println(part)
 
+
 }
