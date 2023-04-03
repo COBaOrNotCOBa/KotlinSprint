@@ -9,7 +9,6 @@ fun main() {
                 "[Доступность столиков на завтра: ${TABLES != tableReserveTomorrow}]"
     )
 
-
 }
 
 const val TABLES = 13
