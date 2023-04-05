@@ -6,16 +6,19 @@ fun main() {
     val winSecondNumber: Byte = 93
 
     println("Введите первое число от 1 до 100")
-    val userFirstNumber = readLine()!!.toByte()
+    val userFirstNumber = readln().toByte()
     println("Введите второе число от 1 до 100")
-    val userSecondNumber = readLine()!!.toByte()
+    val userSecondNumber = readln().toByte()
 
     println("Победившие номера $winFirstNumber и $winSecondNumber!")
 
     val result =
-        if (winFirstNumber == userFirstNumber && winSecondNumber == userSecondNumber) "Поздравляем! Вы выиграли главный приз!"
-        else if (winFirstNumber == userFirstNumber || winSecondNumber == userSecondNumber) "Вы выиграли утешительный приз!"
-        else "Неудача! Крутите барабан!"
+        if (winFirstNumber == userFirstNumber && winSecondNumber == userSecondNumber)
+            "Поздравляем! Вы выиграли главный приз!"
+        else if (winFirstNumber == userFirstNumber || winSecondNumber == userSecondNumber)
+            "Вы выиграли утешительный приз!"
+        else
+            "Неудача! Крутите барабан!"
 
     println(result)
 }
