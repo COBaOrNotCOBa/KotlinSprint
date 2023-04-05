@@ -2,10 +2,6 @@ package lesson_4
 
 fun main() {
 
-    val minimumNumberCrew = 55
-    val maximumNumberCrew = 70
-    val minimumBoxOfProvision = 50
-
     print("Есть ли повреждения корпуса. Записывать Boolean переменную: ")
     val damegeHull = readln().toBoolean()
     print("Текущая численность экипажа: ")
@@ -15,9 +11,18 @@ fun main() {
     print("Благоприятные ли метеоусловия. Записывать Boolean переменную: ")
     val weatherConditions = readln().toBoolean()
 
-    val seeOdyssey =
-        ((!damegeHull) && (numberCrew > minimumNumberCrew) && (numberCrew < maximumNumberCrew) && (boxOfProvisions > minimumBoxOfProvision)) or
-                ((numberCrew == maximumNumberCrew) && (boxOfProvisions > minimumBoxOfProvision) && (weatherConditions))
+    val minimumNumberCrew = 55
+    val maximumNumberCrew = 70
+    val minimumBoxOfProvision = 50
+    val resultNotDamage = ((!damegeHull) &&
+            (numberCrew > minimumNumberCrew) &&
+            (numberCrew < maximumNumberCrew) &&
+            (boxOfProvisions > minimumBoxOfProvision))
+    val resultGoodWeather = ((numberCrew == maximumNumberCrew) &&
+            (boxOfProvisions > minimumBoxOfProvision) &&
+            (weatherConditions))
+
+    val seeOdyssey = resultNotDamage || resultGoodWeather
 
     println("Будет ли одисея: $seeOdyssey")
 
