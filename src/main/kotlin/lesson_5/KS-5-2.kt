@@ -4,7 +4,7 @@ import java.time.LocalDate
 
 fun main() {
 
-    val userYearOfBorn = readLine()!!.toInt()
+    val userYearOfBorn = readln().toInt()
 
     val result = if (LocalDate.now().year - userYearOfBorn >= AGE_OF_MAJORITY) "Показать экран со скрытым контентом"
     else "Давай Досвидания"
