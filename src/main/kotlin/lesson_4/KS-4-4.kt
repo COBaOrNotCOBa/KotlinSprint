@@ -3,10 +3,13 @@ package lesson_4
 fun main() {
 
     val daysOfTraining: Short = 5
-    val exerciseHand = daysOfTraining % 2 != 0
-    val exerciseLeg = daysOfTraining % 2 == 0
-    val exerciseBack = daysOfTraining % 2 == 0
-    val exercisePress = daysOfTraining % 2 != 0
+    val evenDay = daysOfTraining % 2 ==0
+
+    val exerciseHand = !evenDay
+    val exerciseLeg = evenDay
+    val exerciseBack = evenDay
+    val exercisePress = !evenDay
+
     println(
         """
         Упражнения для рук:    $exerciseHand
@@ -15,6 +18,5 @@ fun main() {
         Упражнения для пресса: $exercisePress
     """.trimIndent()
     )
-
 
 }
