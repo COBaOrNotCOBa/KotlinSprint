@@ -2,7 +2,7 @@ package lesson_7
 
 fun main() {
 
-    val passwordNumber: IntRange = 1..9
+    val passwordNumber: IntRange = 0..9
     val passwordChar: CharRange = 'a'..'z'
     val count = 6
     var passwordFull = ""
