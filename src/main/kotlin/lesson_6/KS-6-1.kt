@@ -18,12 +18,11 @@ fun main() {
         login = readln()
     }
 
-    println("Введите ваш пароль: ")
-    password = readln()
-    while (password != userPassword) {
-        println("Пароль не верен! Введите заново")
+    do  {
+        println("Введите ваш пароль: ")
         password = readln()
-    }
+    } while (password != userPassword)
+
     if (password == userPassword) println("Авторизация прошла успешно")
 
 }
