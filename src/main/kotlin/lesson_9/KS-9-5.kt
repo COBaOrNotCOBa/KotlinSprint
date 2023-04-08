@@ -7,15 +7,17 @@ fun main() {
     var ingredientsAll = ""
     println("Введите по очереди пять ингредиентов: ")
 
-    for (i in 0..4){
+    for (i in 0..4) {
         ingredient = readln()
         listOfIngredients.add(ingredient)
     }
 
     listOfIngredients.sort()
-    for (i in 0..4){
+
+    for (i in 0..4) {
         ingredientsAll += listOfIngredients[i] + " "
     }
+    ingredientsAll = ingredientsAll.trim().capitalize() + "."
 
     println(ingredientsAll)
 
