@@ -11,6 +11,8 @@ fun main() {
     lenghtCheck(login)
     authorization(login, passwordGenerator())
     smsCode()
+    println("Добро пожаловать! Вы авторизовались!")
+
 }
 
 fun lenghtCheck(string: String) = (string.count() < 4)
@@ -53,6 +55,5 @@ fun smsCode() {
         userCode = readln().toInt()
     } while (userCode != currentCode)
 
-    println("Добро пожаловать! Вы авторизовались!")
 }
 
