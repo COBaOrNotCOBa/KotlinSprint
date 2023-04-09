@@ -3,7 +3,7 @@ package lesson_10
 fun main() {
 
     var humanDice: Int
-    var compDice:Int
+    var compDice: Int
     var humanChoice: String
     var humanWins = 0
 
@@ -13,19 +13,20 @@ fun main() {
         println("Компьютерный бросок")
         compDice = diceRoll()
 
-    when {
-        humanDice == compDice -> println("Это был равный бой!")
-        humanDice > compDice -> {
-            println("Победило человечество")
-            humanWins++
+        when {
+            humanDice == compDice -> println("Это был равный бой!")
+            humanDice > compDice -> {
+                println("Победило человечество")
+                humanWins++
+            }
+
+            humanDice < compDice -> println("Победила машина")
         }
-        humanDice < compDice -> println("Победила машина")
-    }
 
         println("Хотите бросить кости еще раз Введите Да или Нет: ")
         humanChoice = readln()
 
-    } while (humanChoice=="Да")
+    } while (humanChoice == "Да")
 
     println("Количество побед у человечества: $humanWins")
 
