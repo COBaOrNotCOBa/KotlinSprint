@@ -13,7 +13,7 @@ class User(
         println("login: $login")
         println("password: $password")
         println("email: $eMail")
-        if (bio!="") println("О себе: $bio")
+        if (bio != "") println("О себе: $bio")
     }
 
     fun writeBio() {
@@ -21,15 +21,15 @@ class User(
         bio = readln()
     }
 
-    fun passwordChanging(){
+    fun passwordChanging() {
         println("Введите текущий пароль: ")
-        if (password== readln()) {
+        if (password == readln()) {
             println("Введите новый пароль: ")
-            password= readln()
+            password = readln()
             println("Пароль успешно изменён")
         } else println("Введён неверный пароль")
     }
 
-    fun textToSendUser(text :String) = println("Уважаемый $login вам сообщение: \"$text\" отправлено на почту $eMail")
+    fun textToSendUser(text: String) = println("Уважаемый $login вам сообщение: \"$text\" отправлено на почту $eMail")
 
 }
