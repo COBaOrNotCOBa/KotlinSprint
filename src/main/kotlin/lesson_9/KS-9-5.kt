@@ -20,7 +20,7 @@ fun main() {
     for (i in 0..newCountIngredients) {
         ingredientsAll += listOfIngredients[i] + ", "
     }
-    ingredientsAll = (ingredientsAll.trim().capitalize() + ".").replace(",.", ".")
+    ingredientsAll = (ingredientsAll.trim().replaceFirstChar(Char::titlecase) + ".").replace(",.", ".")
 
     println(ingredientsAll)
 
