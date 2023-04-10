@@ -5,9 +5,8 @@ class User(
     val login: String,
     var password: String,
     val eMail: String,
+    var bio: String? = null
 ) {
-    var bio = ""
-
     fun userInformation() {
         println("id: $id")
         println("login: $login")
