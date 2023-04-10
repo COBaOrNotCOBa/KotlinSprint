@@ -2,7 +2,7 @@ package lesson_11
 
 fun main() {
 
-    val user = User(
+    val user = UserAdvanced(
         1,
         "Batman",
         "123",
