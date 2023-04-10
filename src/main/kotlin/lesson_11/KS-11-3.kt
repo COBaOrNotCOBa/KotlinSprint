@@ -2,22 +2,27 @@ package lesson_11
 
 fun main() {
 
-    RoomChat(
+    val roomChatOne = RoomChat(
         "Black",
         "Black panterns",
         listOfParticipants = listOf("Cat", "big Cat", "small cat"),
     )
 
-    RoomChat(
+    val roomChatTwo = RoomChat(
         "White",
         "White wolfs",
         listOfParticipants = listOf("Dog", "big dog", "small dog"),
     )
 
-    RoomChat(
+    val roomChatThree = RoomChat(
         "Yellow",
         "Sunshine",
         listOfParticipants = listOf("Me"),
     )
 
+    roomChatOne.displeyRoom()
+    roomChatTwo.displeyRoom()
+    roomChatThree.displeyRoom()
+
+    roomChatTwo.longPushAvatar()
 }
