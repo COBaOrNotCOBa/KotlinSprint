@@ -1,21 +1,18 @@
 package lesson_10
 
-import sun.security.util.Password
-import kotlin.math.log
-
 fun main() {
 
     println("Введите логин")
     val login = readln()
 
-    lenghtCheck(login)
+    lengthCheck(login)
     authorization(login, passwordGenerator())
     smsCode()
     println("Добро пожаловать! Вы авторизовались!")
 
 }
 
-fun lenghtCheck(string: String) = (string.count() < 4)
+fun lengthCheck(string: String) = (string.count() < 4)
 
 fun passwordGenerator(): String {
     val passwordChar: CharRange = '!'..'`'
