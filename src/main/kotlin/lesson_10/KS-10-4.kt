@@ -2,30 +2,13 @@ package lesson_10
 
 fun main() {
 
-    var humanDice: Int
-    var compDice: Int
     var humanChoice: String
     var humanWins = 0
 
     do {
-        println("Твой бросок: ")
-        humanDice = diceRoll()
-        println("Компьютерный бросок")
-        compDice = diceRoll()
-
-        when {
-            humanDice == compDice -> println("Это был равный бой!")
-            humanDice > compDice -> {
-                println("Победило человечество")
-                humanWins++
-            }
-
-            humanDice < compDice -> println("Победила машина")
-        }
-
+        humanWins=round(humanWins)
         println("Хотите бросить кости еще раз Введите Да или Нет: ")
         humanChoice = readln()
-
     } while (humanChoice == "Да")
 
     println("Количество побед у человечества: $humanWins")
@@ -38,4 +21,24 @@ fun diceRoll(): Int {
     val secondDice = (1..6).random()
     println("На втором кубике: $secondDice")
     return firstDice + secondDice
+}
+
+fun round(humanWins : Int):Int{
+    var humanVictory = humanWins
+
+    println("Твой бросок: ")
+    val humanDice = diceRoll()
+    println("Компьютерный бросок")
+    val compDice = diceRoll()
+
+    when {
+        humanDice == compDice -> println("Это был равный бой!")
+        humanDice > compDice -> {
+            println("Победило человечество")
+            humanVictory++
+        }
+        else -> println("Победила машина")
+    }
+
+    return humanVictory
 }
