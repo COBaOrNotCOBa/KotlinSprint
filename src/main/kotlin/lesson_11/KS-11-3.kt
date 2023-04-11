@@ -6,8 +6,8 @@ fun main() {
         "Black",
         "Black panterns",
         listOfParticipants = listOf(
-            participant("Cat", "cat"),
-            participant("Black Cat", "black cat")
+            Participant("Cat", "cat"),
+            Participant("Black Cat", "black cat")
         ),
     )
 
@@ -15,8 +15,8 @@ fun main() {
         "White",
         "White wolfs",
         listOfParticipants = listOf(
-            participant("Dog", "dog"),
-            participant("White Dog", "white dog")
+            Participant("Dog", "dog"),
+            Participant("White Dog", "white dog")
         ),
     )
 
@@ -24,7 +24,7 @@ fun main() {
         "Yellow",
         "Sunshine",
         listOfParticipants = listOf(
-            participant("Sun", "yellow Sun")
+            Participant("Sun", "yellow Sun")
         ),
     )
 //вывел в консоль 3 комнаты, и на долго зажал первый аватар
@@ -38,7 +38,7 @@ fun main() {
 class RoomChat(
     val cover: String,
     val roomName: String,
-    val listOfParticipants: List<participant>,
+    val listOfParticipants: List<Participant>,
 ) {
 //список состояний участников
     val statusList = listOf("разговаривает", "микрофон выключен", "пользователь заглушен")
@@ -60,7 +60,7 @@ class RoomChat(
 
 }
 //класс участника с аватаром и именем
-class participant(
+class Participant(
     val name: String,
     val avatar: String,
 )
