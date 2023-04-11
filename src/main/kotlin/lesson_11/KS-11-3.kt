@@ -1,50 +1,69 @@
 package lesson_11
 
 fun main() {
-
+//создал 3 комнаты
     val roomChatOne = RoomChat(
         "Black",
         "Black panterns",
-        listOfParticipants = listOf("Cat", "big Cat", "small cat"),
+        listOfParticipants = listOf(
+            participant("Cat", "cat"),
+            participant("Black Cat", "black cat")
+        ),
     )
 
     val roomChatTwo = RoomChat(
         "White",
         "White wolfs",
-        listOfParticipants = listOf("Dog", "big dog", "small dog"),
+        listOfParticipants = listOf(
+            participant("Dog", "dog"),
+            participant("White Dog", "white dog")
+        ),
     )
 
     val roomChatThree = RoomChat(
         "Yellow",
         "Sunshine",
-        listOfParticipants = listOf("Me"),
+        listOfParticipants = listOf(
+            participant("Sun", "yellow Sun")
+        ),
     )
-
+//вывел в консоль 3 комнаты, и на долго зажал первый аватар
     roomChatOne.displeyRoom()
     roomChatTwo.displeyRoom()
     roomChatThree.displeyRoom()
 
-    roomChatTwo.longPushAvatar()
+    roomChatTwo.longPushAvatar(0)
 }
-
+//класс комната
 class RoomChat(
     val cover: String,
     val roomName: String,
-    val listOfParticipants: List<String>,
+    val listOfParticipants: List<participant>,
 ) {
+//список состояний участников
     val statusList = listOf("разговаривает", "микрофон выключен", "пользователь заглушен")
 
-    fun longPushAvatar() {
-        println()
-        println(listOfParticipants[0])
-    }
-
+//функция вывода данныех а комнате, участниках и их состоянии
     fun displeyRoom() {
         println()
         println("Обложка комнаты: $cover")
         println("Название комнаты: $roomName")
         for (i in 0 until listOfParticipants.size) {
-            println("Аватар пользователя ${i + 1} в состояние: ${statusList.random()}")
+            println("${listOfParticipants[i].avatar} пользователь ${i + 1} в состояние: ${statusList.random()}")
         }
+
     }
+//функция долгово нажатия на аватар для вывода имени
+    fun longPushAvatar(index: Int) {
+        println(listOfParticipants[index].name)
+    }
+
 }
+//класс участника с аватаром и именем
+class participant(
+    val name: String,
+    val avatar: String,
+)
+
+
+
