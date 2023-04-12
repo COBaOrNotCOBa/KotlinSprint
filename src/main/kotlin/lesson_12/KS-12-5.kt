@@ -22,7 +22,7 @@ fun main() {
     if (listOfDays[0].rain) countOfRainyDays = 0
     else countOfRainyDays = 1
 
-    for (i in 0 until countDays) {
+    for (i in 1 until countDays) {
         averageTemperatureDay += listOfDays[i].temperatureDay
         averageTemperatureNight += listOfDays[i].temperatureNight
         averageAtmosphericPressure += listOfDays[i].atmosphericPressure
