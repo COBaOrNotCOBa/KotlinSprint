@@ -27,12 +27,9 @@ fun main() {
     println(userTwo.eMail)
 
 }
-
 class User(
     val id: Int,
     val login: String,
     val password: String,
     val eMail: String,
-) {
-
-}
+)
