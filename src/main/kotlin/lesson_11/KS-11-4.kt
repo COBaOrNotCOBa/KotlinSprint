@@ -10,7 +10,26 @@ fun main() {
         "8 (999) 888-42-42",
         "mail@mail.ru"
     )
+    val favoriteContakt = FavoriteContakt().listOfFavoriteContakt(
+        "username",
+        "username",
+        "username",
+    )
 
+}
+
+class FavoriteContakt {
+
+    fun listOfFavoriteContakt(
+        favoriteContaktFirst: String,
+        favoriteContaktSecond: String,
+        favoriteContaktThird: String
+    ) =
+        listOf(
+            favoriteContaktFirst,
+            favoriteContaktSecond,
+            favoriteContaktThird
+        )
 }
 
 class Contakt(
@@ -21,9 +40,6 @@ class Contakt(
     val homeNumber: String,
     val iCloud: String,
 ) {
-    val favoriteContaktOne = "userName"
-    val favoriteContaktTwo = "userName"
-    val favoriteContaktThree = "userName"
 
     fun changeAvater() = println("Текущий аватар $avatar, на что будем менять?")
     fun sendMessage() = println("Напиши сообщение для $firstName $secondName. На номер $mobileNumber")
