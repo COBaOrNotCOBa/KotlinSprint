@@ -18,7 +18,6 @@ fun main() {
         15,
         760,
     )
-
 }
 
 class Day(
