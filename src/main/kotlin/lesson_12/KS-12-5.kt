@@ -26,8 +26,7 @@ fun main() {
         averageTemperatureDay += listOfDays[i].temperatureDay
         averageTemperatureNight += listOfDays[i].temperatureNight
         averageAtmosphericPressure += listOfDays[i].atmosphericPressure
-        if (listOfDays[i].rain) countOfRainyDays += 0
-        else countOfRainyDays += 1
+        if (!listOfDays[i].rain) countOfRainyDays += 1
     }
 
     println("Средняя температура днём: ${averageTemperatureDay / countDays}")
