@@ -14,7 +14,7 @@ fun main() {
     forum.printThread()
 }
 
-class User(
+class User5(
     val id: Int,
     val login: String,
     val email: String,
@@ -22,12 +22,12 @@ class User(
 )
 
 class Forum {
-    private val users = mutableListOf<User>()
+    private val users = mutableListOf<User5>()
     private val messages = mutableListOf<String>()
 
-    fun newUser(username: String, email: String, password: String): User {
+    fun newUser(username: String, email: String, password: String): User5 {
         val id = users.size
-        val user = User(id, username, email, password)
+        val user = User5(id, username, email, password)
         users.add(user)
 
         return user
