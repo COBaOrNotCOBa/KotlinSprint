@@ -2,43 +2,36 @@ package lesson_11
 
 fun main() {
 
-    val contakt = Contakt(
+    val contact = Contact(
         "Mouse Face",
         "First Name",
         "Second Name",
         "8 (999) 999-42-42",
         "8 (999) 888-42-42",
-        "mail@mail.ru"
-    )
-    val favoriteContakt = FavoriteContakt().listOfFavoriteContakt(
-        "username",
-        "username",
-        "username",
+        "mail@mail.ru",
+        FavoriteContact(
+            "username",
+            "username",
+            "username",
+        ),
     )
 
 }
 
-class FavoriteContakt {
+class FavoriteContact(
+    favoriteContactFirst: String,
+    favoriteContactSecond: String,
+    favoriteContactThird: String,
+)
 
-    fun listOfFavoriteContakt(
-        favoriteContaktFirst: String,
-        favoriteContaktSecond: String,
-        favoriteContaktThird: String
-    ) =
-        listOf(
-            favoriteContaktFirst,
-            favoriteContaktSecond,
-            favoriteContaktThird
-        )
-}
-
-class Contakt(
+class Contact(
     val avatar: String,
     val firstName: String,
     val secondName: String,
     val mobileNumber: String,
     val homeNumber: String,
     val iCloud: String,
+    val listOfFavoriteContact: FavoriteContact,
 ) {
 
     fun changeAvater() = println("Текущий аватар $avatar, на что будем менять?")
