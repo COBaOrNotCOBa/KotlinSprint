@@ -5,7 +5,6 @@ fun main() {
     val listOfDays = mutableListOf<Day>()
     val listOfRainCondition = listOf(false, true)
     val countDays = 10
-    var countOfRainyDays: Int
 
     for (i in 0 until countDays) listOfDays.add(
         Day(
@@ -16,17 +15,16 @@ fun main() {
         )
     )
 
-    var averageTemperatureDay = listOfDays[0].temperatureDay
-    var averageTemperatureNight = listOfDays[0].temperatureNight
-    var averageAtmosphericPressure = listOfDays[0].atmosphericPressure
-    if (listOfDays[0].rain) countOfRainyDays = 0
-    else countOfRainyDays = 1
+    var averageTemperatureDay = 0
+    var averageTemperatureNight = 0
+    var averageAtmosphericPressure = 0
+    var countOfRainyDays = 0
 
-    for (i in 1 until countDays) {
+    for (i in 0 until countDays) {
         averageTemperatureDay += listOfDays[i].temperatureDay
         averageTemperatureNight += listOfDays[i].temperatureNight
         averageAtmosphericPressure += listOfDays[i].atmosphericPressure
-        if (!listOfDays[i].rain) countOfRainyDays += 1
+        if (!listOfDays[i].rain) countOfRainyDays++
     }
 
     println("Средняя температура днём: ${averageTemperatureDay / countDays}")
