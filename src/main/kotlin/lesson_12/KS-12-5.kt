@@ -2,12 +2,12 @@ package lesson_12
 
 fun main() {
 
-    val listOfDays = mutableListOf<Day>()
+    val listOfDays = mutableListOf<Day5>()
     val listOfRainCondition = listOf(false, true)
     val countDays = 10
 
     for (i in 0 until countDays) listOfDays.add(
-        Day(
+        Day5(
             (-20..40).random(),
             (-30..25).random(),
             (700..800).random(),
@@ -33,7 +33,7 @@ fun main() {
     println("Количество дождливых дней: $countOfRainyDays")
 }
 
-class Day(
+class Day5(
     val temperatureDay: Int,
     val temperatureNight: Int,
     val atmosphericPressure: Int,

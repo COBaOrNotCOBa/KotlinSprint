@@ -3,9 +3,9 @@ package lesson_10
 fun main() {
 
     println("Твой бросок: ")
-    val humanDice = diceRoll()
+    val humanDice = diceRollOne()
     println("Компьютерный бросок")
-    val compDice = diceRoll()
+    val compDice = diceRollOne()
 
     when {
         humanDice == compDice -> println("Это был равный бой!")
@@ -15,7 +15,7 @@ fun main() {
 
 }
 
-fun diceRoll(): Int {
+fun diceRollOne(): Int {
     val firstDice = (1..6).random()
     println("На первом кубике: $firstDice")
     val secondDice = (1..6).random()
