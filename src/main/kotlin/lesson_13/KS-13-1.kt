@@ -4,7 +4,7 @@ fun main() {
 
 }
 class PhoneBook(
-    name: String,
-    telephoneNumber: Int,
-    company: String?,
+    val name: String,
+    val telephoneNumber: Int,
+    val company: String?,
 )
