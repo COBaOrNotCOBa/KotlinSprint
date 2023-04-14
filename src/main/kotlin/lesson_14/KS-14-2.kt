@@ -2,12 +2,6 @@ package lesson_14
 
 fun main() {
 
-    val ship = Ship2(
-        "Voyash",
-        500,
-        500.0,
-    )
-
     val cargo = Cargo2(
         "Cargo",
         200,
