@@ -9,20 +9,15 @@ fun main() {
         "8 (999) 999-42-42",
         "8 (999) 888-42-42",
         "mail@mail.ru",
-        FavoriteContact(
-            "username",
-            "username",
-            "username",
-        ),
+        listOfFavoriteContact = listOf(
+            FavoriteContact("username"),
+            FavoriteContact("username"),
+            FavoriteContact("username"),
+        )
     )
-
 }
 
-class FavoriteContact(
-    favoriteContactFirst: String,
-    favoriteContactSecond: String,
-    favoriteContactThird: String,
-)
+class FavoriteContact(favoriteContact: String)
 
 class Contact(
     val avatar: String,
@@ -31,7 +26,7 @@ class Contact(
     val mobileNumber: String,
     val homeNumber: String,
     val iCloud: String,
-    val listOfFavoriteContact: FavoriteContact,
+    val listOfFavoriteContact: List<FavoriteContact>
 ) {
 
     fun changeAvater() = println("Текущий аватар $avatar, на что будем менять?")
