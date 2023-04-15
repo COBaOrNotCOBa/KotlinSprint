@@ -4,6 +4,7 @@ package lesson_14
 fun main() {
 
     val listOfFigeures = mutableListOf<Figure>()
+    val ourColor = "Red"
 
     val circleOne = Circle(
         "Red",
@@ -45,8 +46,8 @@ fun main() {
     listOfFigeures.add(triangleOne)
     listOfFigeures.add(triangleTwo)
 
-    circleOne.sumOfPerimetersRedFigures(listOfFigeures)
-    circleOne.sumOfSquareRedFigures(listOfFigeures)
+    circleOne.sumOfPerimetersColorFigures(listOfFigeures, ourColor)
+    circleOne.sumOfSquareColorFigures(listOfFigeures, ourColor)
 }
 
 abstract class Figure(val color: String) {
@@ -55,18 +56,18 @@ abstract class Figure(val color: String) {
 
     abstract fun perimeterFigure(): Double
 
-    fun sumOfPerimetersRedFigures(listOfFigures: List<Figure>) {
+    fun sumOfPerimetersColorFigures(listOfFigures: List<Figure>, searchColor: String) {
         var sum = 0.0
         listOfFigures.forEach {
-            if (it.color == "Red") sum += it.perimeterFigure()
+            if (it.color == searchColor) sum += it.perimeterFigure()
         }
         println("Сумма периметров красных фигур: $sum")
     }
 
-    fun sumOfSquareRedFigures(listOfFigures: List<Figure>) {
+    fun sumOfSquareColorFigures(listOfFigures: List<Figure>, searchColor: String) {
         var sum = 0.0
         listOfFigures.forEach {
-            if (it.color == "Red") sum += it.squareFigure()
+            if (it.color == searchColor) sum += it.squareFigure()
         }
         println("Сумма площадей красных фигур: $sum")
     }
