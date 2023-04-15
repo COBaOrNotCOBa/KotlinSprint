@@ -51,24 +51,22 @@ fun main() {
 
 abstract class Figure(val color: String) {
 
-    abstract fun squareFigure() :Double
+    abstract fun squareFigure(): Double
 
-    abstract fun perimeterFigure() :Double
+    abstract fun perimeterFigure(): Double
 
-    fun sumOfPerimetersRedFigures(listOfFigures : List<Figure>){
+    fun sumOfPerimetersRedFigures(listOfFigures: List<Figure>) {
         var sum = 0.0
-        val redsFigures = listOfFigures.find {it.color == "Red"}
-        listOfFigures.forEach{
-            if (it.color=="Red") sum += it.perimeterFigure()
+        listOfFigures.forEach {
+            if (it.color == "Red") sum += it.perimeterFigure()
         }
         println("Сумма периметров красных фигур: $sum")
     }
 
-    fun sumOfSquareRedFigures(listOfFigures : List<Figure>){
+    fun sumOfSquareRedFigures(listOfFigures: List<Figure>) {
         var sum = 0.0
-        val redsFigures = listOfFigures.find {it.color == "Red"}
-        listOfFigures.forEach{
-            if (it.color=="Red") sum += it.squareFigure()
+        listOfFigures.forEach {
+            if (it.color == "Red") sum += it.squareFigure()
         }
         println("Сумма площадей красных фигур: $sum")
     }
@@ -90,7 +88,7 @@ class Rectangle(
     val width: Double,
 ) : Figure(color) {
 
-    override fun squareFigure() =length * width
+    override fun squareFigure() = length * width
 
     override fun perimeterFigure() = 2 * (length + width)
 }
