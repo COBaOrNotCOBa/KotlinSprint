@@ -5,7 +5,7 @@ fun main() {
     try {
         val number: Long
         println("Введите номер телефона: ")
-        val strNumber = readLine().toString()
+        val strNumber = readln()
         number = strNumber.toLong()
         println("Номер телефона: $number")
     } catch (e: NumberFormatException){
