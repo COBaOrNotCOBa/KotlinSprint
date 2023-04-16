@@ -14,21 +14,21 @@ fun main() {
 
 }
 
-interface movementOnWater {
+interface MovementOnWater {
     fun movementOnWater()
 }
 
-interface movementOnAir {
+interface MovementOnAir {
     fun movementOnAir()
 }
 
-class CrucianCarp() : movementOnWater {
+class CrucianCarp() : MovementOnWater {
     override fun movementOnWater() {
         println("Карп плывёт")
     }
 }
 
-class Seagull() : movementOnWater, movementOnAir {
+class Seagull() : MovementOnWater, MovementOnAir {
     override fun movementOnWater() {
         println("Чайка плывет")
     }
@@ -38,7 +38,7 @@ class Seagull() : movementOnWater, movementOnAir {
     }
 }
 
-class Duck() : movementOnWater, movementOnAir {
+class Duck() : MovementOnWater, MovementOnAir {
     override fun movementOnWater() {
         println("Утка плавет")
     }
