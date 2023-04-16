@@ -8,7 +8,6 @@ fun main() {
     circle.square()
 
 }
-
 private class Circle(
     private val radius: Double,
 ) {
