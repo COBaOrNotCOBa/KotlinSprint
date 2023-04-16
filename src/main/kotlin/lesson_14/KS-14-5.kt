@@ -3,51 +3,39 @@ package lesson_14
 
 fun main() {
 
-    val listOfFigeures = mutableListOf<Figure>()
+    val listOfFigeures = listOf<Figure>(
+        Circle(
+            "Red",
+            15.0,
+        ), Circle(
+            "Black",
+            5.0,
+        ), Rectangle(
+            "Red",
+            5.0,
+            10.0,
+        ), Rectangle(
+            "Green",
+            5.0,
+            10.0,
+        ), Triangle(
+            "Black",
+            5.0,
+            4.0,
+            3.0,
+            2.4,
+        ), Triangle(
+            "Green",
+            10.0,
+            8.0,
+            6.0,
+            4.8,
+        )
+    )
     val ourColor = "Red"
 
-    val circleOne = Circle(
-        "Red",
-        15.0,
-    )
-    val circleTwo = Circle(
-        "Black",
-        5.0,
-    )
-    val rectangleOne = Rectangle(
-        "Red",
-        5.0,
-        10.0,
-    )
-    val rectangleTwo = Rectangle(
-        "Green",
-        5.0,
-        10.0,
-    )
-    val triangleOne = Triangle(
-        "Black",
-        5.0,
-        4.0,
-        3.0,
-        2.4,
-    )
-    val triangleTwo = Triangle(
-        "Green",
-        10.0,
-        8.0,
-        6.0,
-        4.8,
-    )
-
-    listOfFigeures.add(circleOne)
-    listOfFigeures.add(circleTwo)
-    listOfFigeures.add(rectangleOne)
-    listOfFigeures.add(rectangleTwo)
-    listOfFigeures.add(triangleOne)
-    listOfFigeures.add(triangleTwo)
-
-    circleOne.sumOfPerimetersColorFigures(listOfFigeures, ourColor)
-    circleOne.sumOfSquareColorFigures(listOfFigeures, ourColor)
+    listOfFigeures[0].sumOfPerimetersColorFigures(listOfFigeures, ourColor)
+    listOfFigeures[0].sumOfSquareColorFigures(listOfFigeures, ourColor)
 }
 
 abstract class Figure(val color: String) {
