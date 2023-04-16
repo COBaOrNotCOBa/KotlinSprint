@@ -7,11 +7,9 @@ fun main() {
 
     temperature.connectToServer()
     temperature.sendDataToServer()
-    temperature.temperatureData()
 
     rainfall.connectToServer()
     rainfall.sendDataToServer()
-    rainfall.rainfallData()
 
 }
 
@@ -19,16 +17,17 @@ abstract class WeatherStationOptions() {
 
     fun connectToServer() = println("Соединение с сервером установленно")
 
-    fun sendDataToServer() = println("Данные отправленны на сервер")
+    abstract fun sendDataToServer()
+
 }
 
 class TemperatureStationOptions() : WeatherStationOptions() {
 
-    fun temperatureData() = println("Текущая температура")
+    override fun sendDataToServer() = println("Текущая температура")
 }
 
 class Rainfall() : WeatherStationOptions() {
 
-    fun rainfallData() = println("Текущее количество осадков")
+    override fun sendDataToServer() = println("Текущее количество осадков")
 }
 
