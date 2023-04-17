@@ -4,17 +4,17 @@ fun main() {
 
     val user = User16_3(
         "Bongo",
-        "123",)
+        "123",
+    )
 
-    user.checkPassword("345")
+    if (user.checkPassword("1234")) println("Password is correct")
+    else println("Password is not correct")
 }
 
 class User16_3(
     val login: String,
     private val password: String,
 ) {
-    fun checkPassword(inputPassword: String) {
-        if (inputPassword==password) println("Password is correct")
-        else println("Password is not correct")
-    }
+    fun checkPassword(inputPassword: String) = (inputPassword == password)
+
 }
