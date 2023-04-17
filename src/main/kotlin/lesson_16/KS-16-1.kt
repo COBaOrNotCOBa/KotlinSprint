@@ -9,8 +9,8 @@ fun main() {
 }
 
 class DiceRollWithOneRandomNumber {
-    private val randomNumber = 1..6
+    private val randomNumber = (1..6).random()
 
-    fun getRandomNumber() = println(randomNumber.random())
+    fun getRandomNumber() = println(randomNumber)
 
 }
