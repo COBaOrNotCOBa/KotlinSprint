@@ -13,7 +13,8 @@ fun main() {
 
 }
 
-abstract class WeatherStationOptions() {
+abstract class WeatherStationOptions {
+    abstract val data: String
 
     fun connectToServer() = println("Соединение с сервером установленно")
 
@@ -22,12 +23,13 @@ abstract class WeatherStationOptions() {
 }
 
 class TemperatureStationOptions() : WeatherStationOptions() {
-
-    override fun sendDataToServer() = println("Текущая температура")
+    override val data: String = "Текущая температура"
+    override fun sendDataToServer() = println(data)
 }
 
 class Rainfall() : WeatherStationOptions() {
+    override val data: String = "Текущее количество осадков"
 
-    override fun sendDataToServer() = println("Текущее количество осадков")
+    override fun sendDataToServer() = println(data)
 }
 
