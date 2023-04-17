@@ -4,26 +4,13 @@ fun main() {
 
     val diceRoll = DiceRollWithOneRandomNumber()
 
-    diceRoll.printDiceRollRandomNumber()
+    diceRoll.getRandomNumber()
 
 }
 
 class DiceRollWithOneRandomNumber {
+    private val randomNumber = 1..6
 
-    private fun getRandomNumber(): String {
-        val numbers = mutableListOf(1, 2, 3, 4, 5, 6)
-        val changeNumber = (0..5).random()
-        val randomNumber: Int = (1..999).random()
-        var result = ""
+    fun getRandomNumber() = println(randomNumber.random())
 
-        numbers[changeNumber] = randomNumber
-        numbers.forEach {
-            result += it.toString() + " "
-        }
-        return result
-    }
-
-    fun printDiceRollRandomNumber() {
-        println(getRandomNumber())
-    }
 }
