@@ -32,17 +32,15 @@ fun main() {
             4.8,
         )
     )
+
+    val allfigures = AllFigures(listOfFigeures)
     val ourColor = "Red"
 
-    listOfFigeures[0].sumOfPerimetersColorFigures(listOfFigeures, ourColor)
-    listOfFigeures[0].sumOfSquareColorFigures(listOfFigeures, ourColor)
+    allfigures.sumOfPerimetersColorFigures(listOfFigeures, ourColor)
+    allfigures.sumOfSquareColorFigures(listOfFigeures, ourColor)
 }
 
-abstract class Figure(val color: String) {
-
-    abstract fun squareFigure(): Double
-
-    abstract fun perimeterFigure(): Double
+class AllFigures(val allFigures : List<Figure>){
 
     fun sumOfPerimetersColorFigures(listOfFigures: List<Figure>, searchColor: String) {
         var sum = 0.0
@@ -60,6 +58,13 @@ abstract class Figure(val color: String) {
         println("Сумма площадей красных фигур: $sum")
     }
 }
+
+abstract class Figure(val color: String) {
+
+    abstract fun squareFigure(): Double
+
+    abstract fun perimeterFigure(): Double
+    }
 
 class Circle(
     color: String,
