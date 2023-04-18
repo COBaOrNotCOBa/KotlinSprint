@@ -3,30 +3,30 @@ package lesson_17
 fun main() {
 
     val folder = Folder17_3(
-        "F",
-        3,
+        "Folder name",
+        9,
     )
-    println("Имя: ${folder.name}, количество файлов: ${folder.fileCounter}, секретный флаг: ${folder.flagSecret}")
-    folder.flagSecret = true
-    println("Имя: ${folder.name}, количество файлов: ${folder.fileCounter}, секретный флаг: ${folder.flagSecret}")
-    folder.flagSecret = false
-    println("Имя: ${folder.name}, количество файлов: ${folder.fileCounter}, секретный флаг: ${folder.flagSecret}")
+
+    println("Имя: ${folder.name}, количество файлов: ${folder.fileCounter}, секретный флаг: ${folder.isSecret}")
+    folder.isSecret = true
+    println("Имя: ${folder.name}, количество файлов: ${folder.fileCounter}, секретный флаг: ${folder.isSecret}")
+    folder.isSecret = false
+    println("Имя: ${folder.name}, количество файлов: ${folder.fileCounter}, секретный флаг: ${folder.isSecret}")
 }
 
 class Folder17_3(
-    val nameFile: String,
-    val counterFile: Int,
+    name: String,
+    fileCounter:Int,
+    var isSecret: Boolean = false,
 ) {
-    val name: String
+    var name: String =name
         get() {
-            if (flagSecret) return "Скрытая папка"
-            else return nameFile
+            if (isSecret) return "Скрытая папка"
+            else return field
         }
-    val fileCounter: Int
+    var fileCounter: Int = fileCounter
         get() {
-            if (flagSecret) return 0
-            else return counterFile
+            if (isSecret) return 0
+            else return field
         }
-    var flagSecret: Boolean = false
-
 }
