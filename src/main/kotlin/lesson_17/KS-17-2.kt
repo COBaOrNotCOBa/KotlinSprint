@@ -11,9 +11,8 @@ fun main() {
 
 class Ship17_2 {
     var name: String = "StarShip"
-        get() = field
         set(value) {
-            field = name
+            if (value!=name) println("Руки проч от названия!")
         }
     val averageSpeed: Int = 500
     val homePort: String = "Haiti"
