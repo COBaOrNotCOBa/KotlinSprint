@@ -5,10 +5,10 @@ fun main() {
     val user = User17_5("COBa")
 
     user.password = "1245"
-    println("${user.password}")
+    println(user.password)
     user.login = "Put"
     user.password = "45"
-    println("${user.password}")
+    println(user.password)
     user.login = "COBa"
 
 }
@@ -21,8 +21,6 @@ class User17_5(login: String) {
         }
     var password: String = "123"
         get() = "*".repeat(field.length)
-        set(value) {
-            println("Вы не можете изменить пароль")
-//            field = password без это строчки ругается, но продолжает упорно работать
-        }
+        set(value) = println("Вы не можете изменить пароль")
+
 }
