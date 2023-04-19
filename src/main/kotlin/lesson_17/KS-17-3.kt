@@ -16,10 +16,10 @@ fun main() {
 
 class Folder17_3(
     name: String,
-    fileCounter:Int,
+    fileCounter: Int,
     var isSecret: Boolean = false,
 ) {
-    var name: String =name
+    var name: String = name
         get() {
             if (isSecret) return "Скрытая папка"
             else return field
