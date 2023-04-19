@@ -33,38 +33,36 @@ fun main() {
         )
     )
 
-    val allfigures = AllFigures(listOfFigeures)
     val ourColor = "Red"
 
-    allfigures.sumOfPerimetersColorFigures(listOfFigeures, ourColor)
-    allfigures.sumOfSquareColorFigures(listOfFigeures, ourColor)
+    sumOfPerimetersColorFigures(listOfFigeures, ourColor)
+    sumOfSquareColorFigures(listOfFigeures, ourColor)
 }
 
-class AllFigures(val allFigures : List<Figure>){
 
-    fun sumOfPerimetersColorFigures(listOfFigures: List<Figure>, searchColor: String) {
-        var sum = 0.0
-        listOfFigures.forEach {
-            if (it.color == searchColor) sum += it.perimeterFigure()
-        }
-        println("Сумма периметров красных фигур: $sum")
+fun sumOfPerimetersColorFigures(listOfFigures: List<Figure>, searchColor: String) {
+    var sum = 0.0
+    listOfFigures.forEach {
+        if (it.color == searchColor) sum += it.perimeterFigure()
     }
-
-    fun sumOfSquareColorFigures(listOfFigures: List<Figure>, searchColor: String) {
-        var sum = 0.0
-        listOfFigures.forEach {
-            if (it.color == searchColor) sum += it.squareFigure()
-        }
-        println("Сумма площадей красных фигур: $sum")
-    }
+    println("Сумма периметров красных фигур: $sum")
 }
+
+fun sumOfSquareColorFigures(listOfFigures: List<Figure>, searchColor: String) {
+    var sum = 0.0
+    listOfFigures.forEach {
+        if (it.color == searchColor) sum += it.squareFigure()
+    }
+    println("Сумма площадей красных фигур: $sum")
+}
+
 
 abstract class Figure(val color: String) {
 
     abstract fun squareFigure(): Double
 
     abstract fun perimeterFigure(): Double
-    }
+}
 
 class Circle(
     color: String,
