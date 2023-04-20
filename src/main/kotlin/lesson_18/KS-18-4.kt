@@ -2,23 +2,32 @@ package lesson_18
 
 fun main() {
 
-    Package18_4().squareOfFigure(5.0)
-    Package18_4().squareOfFigure(listOf(2.0, 3.0, 5.0))
+    val cube = Cube18_4(5.0)
+    val parallelepiped = Parallelepiped18_4(
+        2.0,
+        3.0,
+        5.0,
+    )
+
+    println("Площадь поверхности куба равна: ${cube.squareOfFigure()}")
+    println("Площадь поверхности параллепипеда равна: ${parallelepiped.squareOfFigure()}")
 
 }
 
-class Package18_4() {
-    fun squareOfFigure(
-        length: Double,
-    ) {
-        println("Площадь куба равна: ${6 * length * length}")
-    }
-    fun squareOfFigure(
-        length: List<Double>,
-    ) {
-        println(
-            "Площадь параллелепипеда равна: " +
-                    "${2 * (length[0] * length[1] + length[1] * length[2] + length[2] * length[0])}"
-        )
-    }
+abstract class Package18_4 {
+    abstract fun squareOfFigure(): Double
+
+}
+
+class Cube18_4(val length: Double) : Package18_4() {
+    override fun squareOfFigure() = 6 * length * length
+}
+
+class Parallelepiped18_4(
+    val length: Double,
+    val width: Double,
+    val heigth: Double,
+) : Package18_4() {
+    override fun squareOfFigure() = 2 * (length * width + width * heigth + heigth * length)
+
 }
