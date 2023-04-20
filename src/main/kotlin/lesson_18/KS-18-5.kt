@@ -1,48 +1,31 @@
 package lesson_18
 
 fun main() {
-    val screen = Screen()
-    val point = Point(10, 20.5f)
-    val square = Square(100.5f, 200)
-    val circle = Circle(300, 400.5)
 
-    screen.draw(point)
-    screen.draw(square)
-    screen.draw(circle)
+    val screen = Screen()
+    val circle = Circle()
+    val square = Square()
+    val point = Point()
+
+    screen.draw(300, 400.5f, circle)
+    screen.draw(100.5f, 200, square)
+    screen.draw(10, 20.5f, point)
 }
 
-abstract class Shape(
-    val x: Number,
-    val y: Number,
-    val shape: String,
-)
+abstract class Shape(val nameOfShape: String)
 
-class Point(
-    x: Number,
-    y: Number,
-) : Shape(x, y, shape = "точку")
-
-class Square(
-    x: Number,
-    y: Number,
-) : Shape(x, y, shape = "квадрат")
-
-class Circle(
-    x: Number,
-    y: Number,
-) : Shape(x, y, shape = "круг")
+class Circle() : Shape(nameOfShape = "Круг")
+class Square() : Shape(nameOfShape = "Квадрат")
+class Point() : Shape(nameOfShape = "Точка")
 
 class Screen {
 
-    fun draw(point: Point) {
-        println("Рисуем ${point.shape} ${point.x} ${point.y}")
-    }
+    fun draw(x: Number, y: Number, shape: Circle) =
+        println("Рисуем в кординатах x=$x y=$y фигуру ${shape.nameOfShape}")
 
-    fun draw(square: Square) {
-        println("Рисуем ${square.shape} ${square.x} ${square.y}")
-    }
+    fun draw(x: Number, y: Number, shape: Square) =
+        println("Рисуем в кординатах x=$x y=$y фигуру ${shape.nameOfShape}")
 
-    fun draw(circle: Circle) {
-        println("Рисуем ${circle.shape} ${circle.x} ${circle.y}")
-    }
+    fun draw(x: Number, y: Number, shape: Point) =
+        println("Рисуем в кординатах x=$x y=$y фигуру ${shape.nameOfShape}")
 }
