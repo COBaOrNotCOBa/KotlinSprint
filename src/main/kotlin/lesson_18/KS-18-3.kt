@@ -14,18 +14,26 @@ fun main() {
 
 }
 
-abstract class TamogochiAnimal(val name: String,val eat : String) {
+abstract class TamogochiAnimal(val name: String, val eat: String) {
     abstract fun animalEating()
-    fun animalSleep() = println("$name спит")
-    fun animalPlaing() = println("$name играет")
+    abstract fun animalSleep()
+    abstract fun animalPlaing()
 }
 
-class Fox(name: String) : TamogochiAnimal(name, eat = "ягоды"){
+class Fox(name: String) : TamogochiAnimal(name, eat = "ягоды") {
     override fun animalEating() = println("$name ест $eat")
+    override fun animalSleep() = println("$name спит")
+    override fun animalPlaing() = println("$name играет")
 }
-class Dog(name: String) : TamogochiAnimal(name, eat = "кости"){
+
+class Dog(name: String) : TamogochiAnimal(name, eat = "кости") {
     override fun animalEating() = println("$name ест $eat")
+    override fun animalSleep() = println("$name спит")
+    override fun animalPlaing() = println("$name играет")
 }
-class Cat(name: String) : TamogochiAnimal(name, eat = "рыбу"){
+
+class Cat(name: String) : TamogochiAnimal(name, eat = "рыбу") {
     override fun animalEating() = println("$name ест $eat")
+    override fun animalSleep() = println("$name спит")
+    override fun animalPlaing() = println("$name играет")
 }
