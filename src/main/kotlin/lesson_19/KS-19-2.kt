@@ -18,7 +18,7 @@ class GoodsDescription(val goodsTitle: String, val id: Int, val category: Goods1
         when (id) {
             category.id -> {
                 print("Товар: $goodsTitle, id: ${category.id}, категория: ")
-                setTitleGoods(category)
+                println(setTitleGoods(category))
             }
         }
     }
@@ -31,11 +31,11 @@ enum class Goods19_2(val id: Int) {
     ERROR(0),
 }
 
-fun setTitleGoods(goods: Goods19_2) {
-    when (goods) {
-        Goods19_2.CLOTHES -> println("Одежда")
-        Goods19_2.OFFICE_SUPPLIES -> println("Офисные принадлежности")
-        Goods19_2.OTHER -> println("Разное")
-        Goods19_2.ERROR -> println("Не опознано")
+fun setTitleGoods(goods: Goods19_2): String {
+    return when (goods) {
+        Goods19_2.CLOTHES -> "Одежда"
+        Goods19_2.OFFICE_SUPPLIES -> "Офисные принадлежности"
+        Goods19_2.OTHER -> "Разное"
+        Goods19_2.ERROR -> "Не опознано"
     }
 }
