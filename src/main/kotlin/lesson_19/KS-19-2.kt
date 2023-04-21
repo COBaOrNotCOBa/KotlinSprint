@@ -16,10 +16,9 @@ class GoodsDescription(val goodsTitle: String, val id: Int, val category: Goods1
 
     fun getInformationOfGoods() {
         when (id) {
-            category.id -> {
-                print("Товар: $goodsTitle, id: ${category.id}, категория: ")
-                println(setTitleGoods(category))
-            }
+            category.id -> println(
+                "Товар: $goodsTitle, id: ${category.id}, категория: ${setTitleGoods(category)}"
+            )
         }
     }
 }
