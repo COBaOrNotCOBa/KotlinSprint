@@ -14,9 +14,9 @@ fun main() {
 
 abstract class Shape(val nameOfShape: String)
 
-class Circle() : Shape(nameOfShape = "Круг")
-class Square() : Shape(nameOfShape = "Квадрат")
-class Point() : Shape(nameOfShape = "Точка")
+class Circle : Shape(nameOfShape = "Круг")
+class Square : Shape(nameOfShape = "Квадрат")
+class Point : Shape(nameOfShape = "Точка")
 
 class Screen {
 
