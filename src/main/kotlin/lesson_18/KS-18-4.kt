@@ -16,7 +16,6 @@ fun main() {
 
 abstract class Package18_4 {
     abstract fun squareOfFigure(): Double
-
 }
 
 class Cube18_4(val length: Double) : Package18_4() {
@@ -29,5 +28,4 @@ class Parallelepiped18_4(
     val heigth: Double,
 ) : Package18_4() {
     override fun squareOfFigure() = 2 * (length * width + width * heigth + heigth * length)
-
 }
