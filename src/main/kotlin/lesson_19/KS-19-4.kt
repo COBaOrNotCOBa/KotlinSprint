@@ -2,26 +2,26 @@ package lesson_19
 
 fun main() {
 
-    val tank = Tank19_4(Ammo19_4.BLUE_AMMO)
+    val tank = Tank19_4(null)
 
+    tank.changeAmmo(Ammo19_4.BLUE_AMMO)
     tank.shoot()
     tank.changeAmmo(Ammo19_4.GREEN_AMMO)
     tank.shoot()
     tank.changeAmmo(Ammo19_4.RED_AMMO)
     tank.shoot()
-    tank.changeAmmo(Ammo19_4.BLUE_AMMO)
-    tank.shoot()
+
 }
 
-class Tank19_4(var ammo: Ammo19_4) {
+class Tank19_4(var ammo: Ammo19_4?) {
 
     fun changeAmmo(newAmmo: Ammo19_4) {
         ammo = newAmmo
-        println("Заряжены патроны цвета: ${ammo.color}")
+        println("Заряжены патроны цвета: ${ammo?.color}")
     }
 
     fun shoot() {
-        println("Нанесено ${ammo.damage} едениц урона")
+        println("Нанесено ${ammo?.damage} едениц урона")
     }
 
 }
