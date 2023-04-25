@@ -12,7 +12,6 @@ fun main() {
     player.takeHealthPotion()
     println("Игрок ${player.name}, здоровье ${player.currentHealth}/${player.maximumHealth}")
 
-
 }
 
 class Player20_2(
