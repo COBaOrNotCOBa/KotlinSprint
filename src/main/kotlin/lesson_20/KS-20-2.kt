@@ -9,8 +9,9 @@ fun main() {
     )
 
     println("Игрок ${player.name}, здоровье ${player.currentHealth}/${player.maximumHealth}")
-    player.currentHealth = player.takeHealthPotion()
+    player.takeHealthPotion()
     println("Игрок ${player.name}, здоровье ${player.currentHealth}/${player.maximumHealth}")
+
 
 }
 
@@ -19,5 +20,5 @@ class Player20_2(
     var currentHealth: Int,
     val maximumHealth: Int,
 ) {
-    val takeHealthPotion: () -> Int = fun(): Int = maximumHealth
+    val takeHealthPotion: () -> Unit = { currentHealth = maximumHealth }
 }
